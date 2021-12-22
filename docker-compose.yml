@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: express-api
     ports:
-      - 3000:3000
+      - 4000:4000
     volumes:
       - .:/app
       - '/app/node_modules'
@@ -24,6 +24,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=food
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_HOST=mariadb
     networks:
       - docker-service
     volumes:
